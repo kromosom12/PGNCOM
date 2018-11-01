@@ -1,6 +1,7 @@
 package com.example.personal.databasepgas;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,19 +17,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-
-        btnLogin = (Button) findViewById(R.id.btnLogin);
-        editUsername = (EditText) findViewById(R.id.editUsername);
-        editPassword = (EditText) findViewById(R.id.editPasword);
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
-                intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-
+            public void run() {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
             }
-        });
+        }, 2000L);
     }
 }
