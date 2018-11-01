@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -27,12 +28,13 @@ public class MainActivity extends AppCompatActivity {
     private CountDownTimer hitungmundur;
     private final long startTime1 = 2 * 1000;
     private final long interval1 = 1 * 1000;
-
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Button btn=(Button)findViewById(R.id.button2);
 //        hitungmundur = new MCountDownTimer(startTime1, interval1);
 
@@ -46,8 +48,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this , BuatBiodataActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        ma = this;
+    ma = this;
         dbcenter = new DataHelper(this);
         RefreshList();
         //ping();
