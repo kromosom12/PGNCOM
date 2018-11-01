@@ -38,16 +38,6 @@ public class MainActivity extends AppCompatActivity {
         Button btn=(Button)findViewById(R.id.button2);
 //        hitungmundur = new MCountDownTimer(startTime1, interval1);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                // TODO Auto-generated method stub
-                Intent inte = new Intent(MainActivity.this, BuatBiodataActivity.class);
-                startActivity(inte);
-            }
-        });
-
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
