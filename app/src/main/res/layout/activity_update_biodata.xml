@@ -5,9 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UpdateBiodataActivity">
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/layout_toolbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#F7F7F7">
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/layout_toolbar"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
     <EditText
         android:id="@+id/editText1"
         android:layout_width="match_parent"
@@ -17,7 +25,6 @@
         android:inputType="number"
         android:maxLength="10"
         android:enabled="false">
-
         <requestFocus />
     </EditText>
 
@@ -86,5 +93,7 @@
         android:layout_alignRight="@+id/editText3"
         android:layout_alignEnd="@+id/editText3"
         />
+        </RelativeLayout>
+    </LinearLayout>
 
 </RelativeLayout>
